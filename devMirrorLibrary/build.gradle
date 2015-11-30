@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+//dependencies {
+//    compile project(':pullToRefreshLibrary')
+//    compile 'com.google.code.gson:gson:2.2.4'
+//    compile 'com.android.support:appcompat-v7:22.2.1'
+//    compile files('libs/afinal_0.5.1_bin.jar')
+////    compile files('libs/nineoldandroids-2.4.0.jar')
+//    //下面为新添加的
+//    compile 'com.android.support:recyclerview-v7:+'
+//    compile 'com.android.support:cardview-v7:+'
+//
+//    compile 'com.marshalchen.ultimaterecyclerview:library:0.3.18'
+//
+//}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile project(':pullToRefreshLibrary')
+    compile 'com.google.code.gson:gson:2.2.4'
+//    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile files('libs/afinal_0.5.1_bin.jar')
+//    compile files('libs/nineoldandroids-2.4.0.jar')
+    //下面为新添加的
+//    compile 'com.android.support:recyclerview-v7:+'
+    compile 'com.android.support:cardview-v7:+'
+
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.3.18'
+
+}

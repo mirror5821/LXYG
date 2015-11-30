@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    <include layout="@layout/view_loading"/>
+    
+    <include layout="@layout/view_empty"/>
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:numColumns="3"
+        android:horizontalSpacing="@dimen/view_driver_height"
+        android:verticalSpacing="@dimen/view_driver_height"/>
+    
+
+</LinearLayout>
+<!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/layout/base_fragment_grid.xml --><!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/bundles/debug/res/layout/base_fragment_grid.xml -->

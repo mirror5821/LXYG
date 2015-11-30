@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="d4">4dp</dimen>
+    <dimen name="d8">8dp</dimen>
+    <dimen name="d12">12dp</dimen>
+    <dimen name="d16">16dp</dimen>
+    <dimen name="d20">20dp</dimen>
+    
+    <dimen name="tab_padding">@dimen/d4</dimen>
+    <dimen name="tab_text">12sp</dimen>
+    
+    <dimen name="view_margin_top">8dp</dimen>
+    <dimen name="view_margin_left">8dp</dimen>
+    <dimen name="view_driver_height">1sp</dimen>
+    
+    <dimen name="product_list_spacing">4dp</dimen>
+
+</resources>

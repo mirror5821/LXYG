@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <!-- shape如果不声明形状则默认为正方形 -->
+        <shape>
+
+            <!-- 圆角，你也可以对不同的角设置不同的数值 -->
+            <corners android:radius="25.0dp" />
+            <!-- 形状的填充色 -->
+            <solid android:color="#99000000" />
+            <!-- 边框宽度和颜色 -->
+            <stroke android:width="0.0dp" android:color="#000000" />
+        </shape>
+    </item>
+    <item android:state_pressed="false">
+        <!-- shape如果不声明形状则默认为正方形 -->
+        <shape>
+
+            <!-- 圆角，你也可以对不同的角设置不同的数值 -->
+            <corners android:radius="25.0dp" />
+            <!-- 形状的填充色 -->
+            <solid android:color="#99000000" />
+            <!-- 边框宽度和颜色 -->
+            <stroke android:width="0.0dp" android:color="#000000" />
+        </shape>
+    </item>
+
+
+</selector><!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/drawable/bg_sharp_toast.xml --><!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/bundles/debug/res/drawable/bg_sharp_toast.xml -->

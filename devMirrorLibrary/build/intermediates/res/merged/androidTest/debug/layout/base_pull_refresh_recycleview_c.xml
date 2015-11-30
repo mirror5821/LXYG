@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/view_loading"/>
+
+    <include layout="@layout/view_empty"/>
+
+    <LinearLayout
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+</LinearLayout><!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/layout/base_pull_refresh_recycleview_c.xml --><!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/bundles/debug/res/layout/base_pull_refresh_recycleview_c.xml -->

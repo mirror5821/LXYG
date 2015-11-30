@@ -1,0 +1,75 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="WH_F">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    
+    <style name="WH_W">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="WH_WF_HW">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="WH_WW_HF">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+    
+    
+    <style name="WH_F_V" parent="WH_F">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="WH_W_V" parent="WH_W">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="WH_WF_HW_V" parent="WH_WF_HW">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="WH_WW_HF_V" parent="WH_WW_HF">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="WH_F_H" parent="WH_F">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="WH_W_H" parent="WH_W">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="WH_WF_HW_H" parent="WH_WF_HW">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="WH_WW_HF_H" parent="WH_WW_HF">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    
+
+</resources>
