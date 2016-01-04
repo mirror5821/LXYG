@@ -13,7 +13,7 @@ public class PriceUtil {
 		float i = (float)price/100;
 
 //		DecimalFormat   fnum  =   new  DecimalFormat("##0.00");
-		DecimalFormat   fnum  =   new  DecimalFormat("##0.0");
+		DecimalFormat   fnum  =   new  DecimalFormat("##0.00");
 		return fnum.format(i);
 	}
 }

@@ -494,12 +494,17 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="address_delete">删除地址</string>
+    <string name="address_update">修改地址</string>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.3.18/res/values/values.xml -->
     <eat-comment/>
     <string name="app_name">UltimateRecyclerView</string>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="caiwu">财务</string>
+    <string name="close">关</string>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.10/res/values/values.xml -->
     <eat-comment/>
     <string name="cube_ptr_hours_ago"> hours ago</string>
@@ -517,9 +522,12 @@
     <string name="customer_all">总数(个)</string>
     <string name="customer_lv">活跃率(%)</string>
     <string name="customer_y">昨日新增(个)</string>
-    <string name="empty_product">老板招募中，近期开售</string>
+    <string name="empty_area">此地区暂无商户入驻</string>
+    <string name="empty_product">暂无产品</string>
+    <string name="empty_shopping_car">您的购物车是空的!</string>
     <string name="loading_data">正在加载数据...</string>
     <string name="loading_failed">未查询到任何数据\n下拉刷新数据</string>
+    <string name="open">开</string>
     <string name="order">订单</string>
     <string name="order_daishou">待收货(个)</string>
     <string name="order_new">新订单(个)</string>
@@ -534,11 +542,15 @@
     <string name="pull_to_refresh_release_label">Release to refresh…</string>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="push_set">推送设置</string>
     <string name="qiangdan">抢单</string>
     <string name="qiangdan_now">当前可抢订单(个)</string>
     <string name="saleAll">累计营收(元)</string>
     <string name="saleY">昨日营收(元)</string>
     <string name="saleYu">可用余额(元)</string>
+    <string name="search_no_product">该商品暂时缺货中</string>
+    <string name="sign">今日签到</string>
+    <string name="sign2">签到</string>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>

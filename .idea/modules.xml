@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LXYG.iml" filepath="$PROJECT_DIR$/LXYG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alipay_Library/alipay_Library.iml" filepath="$PROJECT_DIR$/alipay_Library/alipay_Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/devMirrorLibrary/devMirrorLibrary.iml" filepath="$PROJECT_DIR$/devMirrorLibrary/devMirrorLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jPushLibrary/jPushLibrary.iml" filepath="$PROJECT_DIR$/jPushLibrary/jPushLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pullToRefreshLibrary/pullToRefreshLibrary.iml" filepath="$PROJECT_DIR$/pullToRefreshLibrary/pullToRefreshLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" filepath="$PROJECT_DIR$/social_sdk_library_project/social_sdk_library_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umengLirary/umengLirary.iml" filepath="$PROJECT_DIR$/umengLirary/umengLirary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxingLibrary/zxingLibrary.iml" filepath="$PROJECT_DIR$/zxingLibrary/zxingLibrary.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">ZxingLibrary</string>
+    
+    <string name="scan_notify">请将二维码对准框内进行扫描</string>
+
+</resources>

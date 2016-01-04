@@ -23,6 +23,7 @@ public class BaseAppContext extends Application{
 		}
 	}
 
+
 	public static void deleteBitmap(){
 		sFinalBitmap.clearCache();
 		sFinalBitmap.clearDiskCache();

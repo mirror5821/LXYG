@@ -1,0 +1,8 @@
+include ':alipay_Library'
+include ':devMirrorLibrary'
+include ':jPushLibrary'
+include ':pullToRefreshLibrary'
+include ':umengLirary'
+include ':zxingLibrary'
+include ':social_sdk_library_project'
+include ':app'

@@ -205,6 +205,47 @@ public class DevBaseActivity extends FragmentActivity implements View.OnClickLis
         d.show();
     }
 
+    /**
+     * 弹出提示框
+     * @param title
+     * @param msg
+     * @param btnStr1
+     * @param l1
+     * @param btnStr2
+     * @param l2
+     */
+    public void showNormalDialogByTwoButton(String title,String msg,String btnStr1,DialogInterface.OnClickListener l1,String btnStr2
+            ,DialogInterface.OnClickListener l2){
+        if(mBuilder == null){
+            mBuilder = new AlertDialog.Builder(getActivity());
+        }
+        mBuilder.setTitle(title);
+        mBuilder.setMessage(msg);
+        mBuilder.setPositiveButton(btnStr1, l1);
+        mBuilder.setNegativeButton(btnStr2, l2);
+        Dialog d = mBuilder.create();
+        d.show();
+    }
+
+
+    /**
+     * 弹出自定义view
+     */
+    public void showNormalDialogByCustomerView(View view,DialogIface dialogIface){
+        if(mBuilder == null){
+            mBuilder = new AlertDialog.Builder(getActivity());
+        }
+        mBuilder.setView(view);
+        Dialog d = mBuilder.create();
+
+        dialogIface.d(d);
+        d.show();
+
+    }
+
+    public interface DialogIface{
+        void d(Dialog dialog);
+    }
 
     @Override
     protected void onResume() {
