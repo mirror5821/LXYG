@@ -59,10 +59,10 @@
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="cadetblue">#5F9EA0</color>
-    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.0.0-alpha1/res/values/values.xml -->
     <eat-comment/>
-    <color name="cardview_dark_background">#FF202020</color>
-    <color name="cardview_light_background">#FFFAFAFA</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/src/main/res/values/colors.xml -->
@@ -274,7 +274,7 @@
     <declare-styleable name="AddFloatingActionButton"><attr format="color" name="plusIconColor"/></declare-styleable>
     <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/></declare-styleable>
     <declare-styleable name="AppCompatTextView"><attr format="reference|boolean" name="textAllCaps"/><attr name="android:textAppearance"/></declare-styleable>
-    <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/></declare-styleable>
+    <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/></declare-styleable>
     <declare-styleable name="CustomTheme"><attr format="reference" name="gifMoviewViewStyle"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="topBottomBarArrowSize"/><attr format="dimension" name="middleBarArrowSize"/><attr format="dimension" name="barSize"/><attr format="dimension" name="thickness"/></declare-styleable>
@@ -368,7 +368,7 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.0.0-alpha1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
@@ -522,7 +522,7 @@
     <string name="customer_all">总数(个)</string>
     <string name="customer_lv">活跃率(%)</string>
     <string name="customer_y">昨日新增(个)</string>
-    <string name="empty_area">此地区暂无商户入驻</string>
+    <string name="empty_area">店铺筹备中</string>
     <string name="empty_product">暂无产品</string>
     <string name="empty_shopping_car">您的购物车是空的!</string>
     <string name="loading_data">正在加载数据...</string>
@@ -1486,7 +1486,7 @@
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/D:/WorkSpace/Android/AndroidStudio/20151029/LXYG/devMirrorLibrary/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.0.0-alpha1/res/values/values.xml -->
     <eat-comment/>
     <style name="CardView">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/LLMyItem" >
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:drawableRight="@mipmap/ic_next_gray"
+                    android:text="@string/receiving_address" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/view_margin_top"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_phone"
+                    style="@style/TvOrderConfirmHint" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/district"
+                        style="@style/TvOrderConfirmHint" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/TvOrderConfirmHint"
+                        android:layout_marginLeft="4dp"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <dev.mirror.library.view.CustomHScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <!-- 此处不确定是横向或者竖向 -->
+                    <LinearLayout
+                        android:id="@+id/view2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/order_make_product_height"
+                        android:layout_marginTop="@dimen/view_margin_top"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"/>
+
+
+                </dev.mirror.library.view.CustomHScrollView>
+
+                <TextView
+                    android:id="@+id/p_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:drawableRight="@mipmap/ic_next_s"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/tv_title" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:text="@string/receiving_way" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <RadioGroup
+                android:id="@+id/rg1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/view_margin_left"
+                android:paddingRight="@dimen/view_margin_left" >
+
+                <RadioButton
+                    android:id="@+id/rb11"
+                    style="@style/RBPayType"
+                    android:drawableLeft="@mipmap/ic_send_now"
+                    android:gravity="center_vertical"
+                    android:text="@string/send_now" />
+
+                <RadioButton
+                    android:id="@+id/rb12"
+                    style="@style/RBPayType"
+                    android:drawableLeft="@mipmap/ic_send_time"
+                    android:gravity="center_vertical"
+                    android:text="@string/send_time" />
+            </RadioGroup>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view_time"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:text="@string/select_send_date" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_ck"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:text="@string/use_e_case" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    style="@style/TvMyHint"
+                    android:layout_marginRight="4dp"
+                    android:text="@string/zero"
+                    android:textColor="@color/green" />
+
+                <CheckBox
+                    android:id="@+id/ck_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/view_margin_left"
+                    android:background="@drawable/bg_rb_e_case"
+                    android:button="@null" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/view_rb"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:text="@string/use_e_hb" />
+
+                <TextView
+                    android:id="@+id/tv_hb"
+                    style="@style/TvMyHint"
+                    android:layout_marginRight="4dp"
+                    android:text="@string/zero"
+                    android:textColor="@color/green" />
+
+                <CheckBox
+                    android:id="@+id/ck_hb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/view_margin_left"
+                    android:background="@drawable/bg_rb_e_case"
+                    android:button="@null" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_marker"
+                style="@style/ETZizhi"
+                android:singleLine="false"
+                android:minLines="5"
+                android:gravity="top|left"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_marker"
+                android:layout_marginTop="@dimen/view_margin_top" />
+            
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:layout_height="36dp"
+                    android:text="@string/payment" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rg2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/view_margin_left"
+                android:paddingLeft="@dimen/view_margin_left"
+                android:paddingRight="@dimen/view_margin_left" >
+
+                <RadioButton
+                    android:id="@+id/rb21"
+                    style="@style/RBPayType"
+                    android:drawableLeft="@mipmap/ic_wechat_logo"
+                    android:text="@string/wechat_pay"/>
+
+                <RadioButton
+                    android:id="@+id/rb22"
+                    style="@style/RBPayType"
+                    android:drawableLeft="@mipmap/ic_alipay_logo"
+                    android:text="@string/ali_pay"/>
+
+                <RadioButton
+                    android:id="@+id/rb23"
+                    style="@style/RBPayType"
+                    android:drawableLeft="@mipmap/ic_daofu_logo"
+                    android:text="@string/send_pay"
+                    android:visibility="gone"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/peisong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="lkhlkjlkjlkjlkj"
+                android:textColor="@color/main_red"
+                android:background="@color/white"
+                android:padding="@dimen/d8"/>
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+    <View style="@style/Line1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp"
+        android:paddingLeft="@dimen/view_margin_top"
+        android:paddingRight="@dimen/view_margin_top"
+        android:paddingTop="2dp" >
+
+        <TextView
+            style="@style/TvMyHint"
+            android:text="@string/order_total" />
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/TvMyHint"
+            android:layout_marginLeft="4dp"
+            android:text="@string/zero"
+            android:textColor="@color/main_red" />
+
+        <Button
+            android:id="@+id/sub"
+            style="@style/BtnRed"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:text="@string/pay_now" />
+    </LinearLayout>
+
+</LinearLayout>

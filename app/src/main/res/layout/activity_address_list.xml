@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <include layout="@layout/base_fragment_list" />
+    </LinearLayout>
+
+    <View style="@style/Line1" />
+
+    <LinearLayout
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_normal_height"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/view_margin_left"
+        android:paddingRight="@dimen/view_margin_left" >
+
+
+        <Button
+            android:id="@+id/btn"
+            style="@style/BtnRed"
+            android:layout_height="40dp"
+            android:text="@string/add_receiving_address" />
+    </LinearLayout>
+
+
+</LinearLayout>

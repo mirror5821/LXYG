@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 新的色值 -->
+    <color name="list1">#f3f4f6</color>
+    <color name="list2">#f0efef</color>
+    <color name="gudie">#87b856</color>
+    <color name="gudie_tv">#507d23</color>
+
+    <color name="main_red">#ff4400</color>
+
+    <color name="search_tv">#ffa26d</color>
+    <!--eeeeee-->
+    <color name="main_bg">#eeeeee</color>
+    <color name="driver">#d4d4d4</color>
+    <color name="normal_press">#d5e3d9</color>
+
+    <color name="user_nav">#0195a3</color>
+
+    <color name="no_color">#00000000</color>
+
+    <color name="tab_tv_s">#ff6600</color>
+    <color name="tab_tv_n">#5b5a59</color>
+    <color name="tv_title">#383838</color><!--#383838 -->
+    <color name="tv_item_title">#8a8989</color>
+    <color name="tv_index_item">#999999</color>
+    <color name="tv_hint">#8d8b8b</color>
+    <color name="tv_category_list1">#464646</color>
+
+    <color name="bg_customer_header">#eeeeee</color>
+
+    <color name="btn_enabled_false">#a6a497</color>
+
+    <color name="btn_blue">#397fc7</color>
+    <color name="btn_dark">#cccccc</color>
+    <color name="btn_yellow">#cfcf4d</color>
+    <color name="gray2">#eff0f0</color>
+    <color name="cash_0">#a3a3a3</color>
+
+
+    <drawable name="rb_s">@color/main_red</drawable>
+    <drawable name="rb_n">@color/driver</drawable>
+
+    <color name="g_p1">#efb144</color>
+    <color name="g_p2">#e27171</color>
+    <color name="g_p3">#a5d449</color>
+    <color name="g_p4">#b995cb</color>
+    <color name="g_p5">#f396c6</color>
+    <color name="g_p6">#73ade2</color>
+    <color name="g_p7">#ef6464</color>
+    <color name="g_p8">#ef6600</color>
+
+    <drawable name="g_d1">@color/g_p1</drawable>
+    <drawable name="g_d2">@color/g_p2</drawable>
+    <drawable name="g_d3">@color/g_p3</drawable>
+    <drawable name="g_d4">@color/g_p4</drawable>
+    <drawable name="g_d5">@color/g_p5</drawable>
+    <drawable name="g_d6">@color/g_p6</drawable>
+    <drawable name="g_d7">@color/g_p7</drawable>
+    <drawable name="g_d8">@color/g_p8</drawable>
+
+
+    <drawable name="main_bg">@color/main_bg</drawable>
+    <!-- -->
+    <color name="shop_title">#d83531</color>
+    <color name="shop_title2">#141317</color>
+    <color name="shop_title3">#8c081108</color>
+
+    <drawable name="list_driver">@color/main_bg</drawable>
+
+    <color name="search_bar_bg">#c43400</color>
+    <color name="search_bar_bg_2">#dadada</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="mutil_title">#21282C</color>
+</resources>

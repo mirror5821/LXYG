@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    android:id="@+id/view_ep">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="192dp"
+        android:src="@mipmap/ic_empty_logo" />
+    
+    
+    <TextView 
+        android:id="@+id/tv_dsc"
+        android:layout_width="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_sharp"
+        android:text="@string/empty_product"
+        android:gravity="center"
+        android:textColor="@color/tv_hint"/>
+    
+    
+    <TextView 
+        android:id="@+id/tv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_c"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/play_other"/>
+
+</LinearLayout>

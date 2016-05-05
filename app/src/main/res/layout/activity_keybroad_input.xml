@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_margin_left"
+        android:layout_marginRight="@dimen/view_margin_left"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_input_num"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_margin_left"
+            android:text="@string/input_tixian_pass"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.5"
+            android:maxLines="6"
+            android:textColor="@color/black"
+            android:textScaleX="3" />
+    </LinearLayout>
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5.0dp"
+        android:background="#ffffffff"
+        android:focusable="true"
+        android:keyBackground="@drawable/bg_normal_press_white"
+        android:keyTextColor="@color/black"
+        android:keyTextSize="26.0sp"
+        android:shadowColor="#ffffffff"
+        android:shadowRadius="0.0" />
+
+</RelativeLayout>

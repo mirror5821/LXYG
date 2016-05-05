@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/d8"
+    android:descendantFocusability="blocksDescendants">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <dev.mirror.library.view.CircleImageView
+            android:id="@+id/c_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/ic_logo_s" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:layout_toRightOf="@id/c_img"
+            android:textSize="16sp"
+            android:layout_marginLeft="@dimen/d8"
+            android:textColor="@color/main_red"/>
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/TvMyHint"
+            android:text="@string/app_name"
+            android:layout_toRightOf="@id/c_img"
+            android:layout_below="@id/name"
+            android:textSize="14sp"
+            android:layout_alignLeft="@id/name"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:background="@color/btn_blue"
+            android:textColor="@color/white"
+            android:text="@string/delete"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+    <View style="@style/Line1"
+        android:layout_marginTop="@dimen/d4"
+        android:layout_marginBottom="@dimen/d4"
+        android:background="@null"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#191a19"
+        android:text="@string/loading_data"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/TvMyHint"
+        android:text="@string/loading_data"
+        android:textSize="16sp"
+        android:layout_marginBottom="@dimen/d4"
+        android:textColor="#535252"
+        android:visibility="gone"/>
+
+
+
+    <dev.mirror.library.view.NoScrollGridView
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/product_list_spacing"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/product_list_spacing"
+        android:layout_marginTop="@dimen/d4"/>
+
+
+    <!--android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"-->
+
+
+    <View style="@style/Line1"
+        android:layout_marginTop="@dimen/d4"
+        android:layout_marginBottom="@dimen/d4"
+        android:background="@null"/>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/d4">
+
+
+        <Button
+            android:id="@+id/btn_zan"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:background="@color/main_red"
+            android:drawableLeft="@mipmap/ic_zan_n"
+            android:paddingLeft="@dimen/d8"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:id="@+id/btn_comment"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:background="@color/main_red"
+            android:drawableLeft="@mipmap/ic_comment"
+            android:paddingLeft="@dimen/d8"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/d8"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

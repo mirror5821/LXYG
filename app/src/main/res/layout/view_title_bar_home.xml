@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical"
+    android:background="@color/main_red" >
+
+    <!--<EditText
+        android:id="@+id/et_sm"
+        android:layout_width="1sp"
+        android:layout_height="1sp"
+        android:visibility="invisible"/>-->
+
+    <Button
+        android:id="@+id/area_selector"
+        android:background="@null"
+        android:drawableRight="@mipmap/ic_xiala"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/d8"/>
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/view_search"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/d8"
+        android:gravity="right"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:background="@drawable/btn_search_orange"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="@dimen/d4"
+            />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/sign"
+        android:src="@mipmap/ic_sign2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:textColor="@color/white"
+        android:gravity="right|center_vertical"
+        android:textSize="18sp"
+        android:paddingRight="@dimen/d16"
+        android:text="@string/sign2"
+        android:layout_toLeftOf="@id/view_search"/>
+
+
+
+
+
+    <!--<TextView
+        android:id="@+id/bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/loading_data"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+
+
+    <ImageView
+        android:id="@+id/area_selector"
+        android:background="@drawable/btn_area"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/d4"/>
+
+
+    <ImageView
+        android:id="@+id/msg"
+        android:background="@drawable/btn_msg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/d4"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"/>
+
+
+    <RelativeLayout
+        android:id="@+id/view_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_sharp_search"
+        android:layout_margin="@dimen/d8"
+        android:layout_toRightOf="@id/area_selector"
+        android:layout_toLeftOf="@id/msg">
+
+
+
+        <ImageView
+            android:id="@+id/right_icon"
+            android:background="@drawable/btn_scan_orange"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/d4"/>
+
+
+        <ImageView
+            android:background="@drawable/btn_search_orange"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="@dimen/d4"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/search_word"
+            android:gravity="center_vertical"
+            android:textColor="@color/search_tv"
+            android:layout_marginLeft="36dp"/>
+
+
+
+        &lt;!&ndash;ic_search_red&ndash;&gt;
+
+    </RelativeLayout>
+-->
+
+
+</RelativeLayout>

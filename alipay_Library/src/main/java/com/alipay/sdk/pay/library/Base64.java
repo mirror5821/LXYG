@@ -1,5 +1,7 @@
 package com.alipay.sdk.pay.library;
 
+import com.alipay.sdk.auth.AlipaySDK;
+
 public final class Base64 {
 
 	private static final int BASELENGTH = 128;

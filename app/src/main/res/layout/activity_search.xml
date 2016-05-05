@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/main_bg">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        android:background="@color/main_red" >
+
+
+        <ImageView
+            android:id="@+id/left_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sharp_search"
+            android:layout_margin="@dimen/d8"
+            android:layout_toRightOf="@id/left_icon">
+
+
+
+            <ImageView
+                android:id="@+id/scan"
+                android:background="@drawable/btn_scan_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/d4"/>
+
+
+            <ImageView
+                android:id="@+id/search"
+                android:background="@drawable/btn_search_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="@dimen/d4"/>
+
+
+            <EditText
+                android:id="@+id/et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/no_color"
+                android:layout_toLeftOf="@id/scan"
+                android:layout_toRightOf="@id/search"
+                android:hint="@string/search_word"
+                android:textSize="14sp"
+                android:textColorHint="@color/search_tv"
+                android:textColor="@color/white"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"/>
+
+
+            <!--ic_search_red-->
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"/>
+
+</LinearLayout>

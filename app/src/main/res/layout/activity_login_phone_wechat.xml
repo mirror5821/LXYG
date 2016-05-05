@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@color/main_bg">
+    
+    <include layout="@layout/view_title_bar"/>
+    
+    
+    <TextView 
+        android:id="@+id/phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:layout_margin="@dimen/view_margin_left"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ic_input_phone"
+        android:text="手机登录"
+        android:drawablePadding="4dp"
+        android:padding="4dp"/>
+    
+    
+    <TextView 
+        android:id="@+id/wechat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:layout_marginLeft="@dimen/view_margin_left"
+        android:layout_marginRight="@dimen/view_margin_left"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ic_wechat"
+        android:text="微信登录"
+        android:drawablePadding="4dp"
+        android:padding="4dp"/>
+
+</LinearLayout>

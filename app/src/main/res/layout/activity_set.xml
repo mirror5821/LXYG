@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/view_us"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/about_us" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:visibility="gone" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/send_manager" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <!--<View style="@style/Line3" />-->
+
+            <LinearLayout
+                android:id="@+id/view_lx"
+                style="@style/LLMyItem"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/contract_us" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View style="@style/Line3" />
+
+            <LinearLayout
+                android:id="@+id/view_fk"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/feet" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View style="@style/Line3" />
+
+            <LinearLayout
+                android:id="@+id/view_xy"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/xieyi" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View style="@style/Line3" />
+
+            <LinearLayout
+                android:id="@+id/view_version"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/version_check" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+            
+            
+            <View style="@style/Line3" />
+
+            <LinearLayout
+                android:id="@+id/view_cache"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/clear_data" />
+
+                <TextView
+                    android:id="@+id/tv_cache"
+                    style="@style/TvMyItemNum" />
+            </LinearLayout>
+            <View style="@style/Line1"/>
+
+            <LinearLayout
+                style="@style/LLMyItem">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/push_set"/>
+
+
+                <Switch
+                    android:id="@+id/push"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOn="@string/open"
+                    android:textOff="@string/close"
+                    android:layout_marginRight="@dimen/d8"
+                    android:checked="true"/>
+            </LinearLayout>
+            
+            <Button 
+                android:id="@+id/logout"
+                style="@style/BtnBlue"
+                android:layout_margin="8dp"
+                android:text="@string/logout"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

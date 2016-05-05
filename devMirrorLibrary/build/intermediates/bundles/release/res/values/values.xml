@@ -177,7 +177,7 @@
     <string name="customer_all">总数(个)</string>
     <string name="customer_lv">活跃率(%)</string>
     <string name="customer_y">昨日新增(个)</string>
-    <string name="empty_area">此地区暂无商户入驻</string>
+    <string name="empty_area">店铺筹备中</string>
     <string name="empty_product">暂无产品</string>
     <string name="empty_shopping_car">您的购物车是空的!</string>
     <string name="loading_data">正在加载数据...</string>

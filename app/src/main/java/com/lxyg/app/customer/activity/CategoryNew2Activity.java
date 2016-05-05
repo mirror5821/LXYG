@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,16 +21,14 @@ import com.google.zxing.activity.CaptureActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshGridView;
 import com.lxyg.app.customer.R;
-import com.lxyg.app.customer.adapter.ProductAdapter;
+import com.lxyg.app.customer.adapter.ProductForCategoryAdapter;
 import com.lxyg.app.customer.app.AppContext;
-import com.lxyg.app.customer.bean.Brands;
 import com.lxyg.app.customer.bean.Car;
+import com.lxyg.app.customer.bean.Categorys;
 import com.lxyg.app.customer.bean.Product;
-import com.lxyg.app.customer.bean.Types;
 import com.lxyg.app.customer.iface.AddrBase;
 import com.lxyg.app.customer.utils.AppAjaxCallback;
-import com.lxyg.app.customer.utils.AppAjaxParam;
-import com.lxyg.app.customer.utils.AppHttpClient;
+import com.lxyg.app.customer.view.CHorizontalScrollView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,23 +42,26 @@ import dev.mirror.library.utils.DpUtil;
 /**
  * Created by 王沛栋 on 2015/12/7.
  */
-public class CategoryNew2Activity extends BaseActivity{
+public class CategoryNew2Activity extends BaseActivity{//BaseSwipeBackActivity  支持滑动销毁的acitivity
     private RelativeLayout mViewSearch;
     private ImageView mImgScan;
     private ListView mListView1;
-    //    private GridView mGridView;
-    private HorizontalScrollView mHView;
-    private RadioGroup mRG;
+    private CHorizontalScrollView mHView,mHView2;
+    private RadioGroup mRG,mRG2;
     private PullToRefreshGridView mListProduct;
     private LinearLayout mViewLoading;
     private TextView mTvEmpty;
     private TextView mTvCar;
+    private TextView mTvClock;
     private RelativeLayout mViewCar;
+
+    private int mTypeId = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_category_new);
+        setContentView(R.layout.activity_category_new);
 
         setBack();
 
@@ -73,14 +73,18 @@ public class CategoryNew2Activity extends BaseActivity{
         mImgScan.setOnClickListener(this);
 
         mListView1 = (ListView)findViewById(R.id.listview1);
+        mTvClock = (TextView)findViewById(R.id.tv_time);
 
-//        mGridView = (GridView)view.findViewById(R.id.gridview);
-
-        mHView = (HorizontalScrollView)findViewById(R.id.s_view);
+        mHView = (CHorizontalScrollView)findViewById(R.id.s_view);
         mRG = (RadioGroup)findViewById(R.id.view_select);
+
+        mHView2 = (CHorizontalScrollView)findViewById(R.id.s_view2);
+        mRG2 = (RadioGroup)findViewById(R.id.view_select2);
+
         mListProduct = (PullToRefreshGridView)findViewById(R.id.list);
         mViewLoading = (LinearLayout)findViewById(R.id.loading);
         mTvEmpty = (TextView)findViewById(R.id.tv);
+        mTvEmpty.setOnClickListener(this);
         mTvCar = (TextView)findViewById(R.id.tv_car);
         mViewCar = (RelativeLayout)findViewById(R.id.view_car);
         mViewCar.setOnClickListener(this);
@@ -90,19 +94,294 @@ public class CategoryNew2Activity extends BaseActivity{
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<GridView> refreshView) {
                 mPageNo = mPageDefault;
-                initProduct(mTypeId);
+                initProduct(mBrandId);
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<GridView> refreshView) {
                 mPageNo++;
-                initProduct(mTypeId);
+                initProduct(mBrandId);
+            }
+        });
+        initShoppingCar();
+
+        bind();
+        loadWorkTime();
+
+    }
+
+    private void loadWorkTime(){
+        JSONObject jb = new JSONObject();
+        try{
+            jb.put("s_uid",AppContext.SHOP_ID);
+        }catch (JSONException e){
+
+        }
+        mBaseHttpClient.postData1(WORK_TIME, jb, new AppAjaxCallback.onResultListener() {
+            @Override
+            public void onResult(String data, String msg) {
+                mTvClock.setText(data+"    \n店铺电话:"+AppContext.SERVICE_PHONE);
+            }
+
+            @Override
+            public void onError(String msg) {
+                mTvClock.setVisibility(View.GONE);
+            }
+        });
+    }
+
+
+    private AddrAdapter<Categorys> mAdapterType;
+    private List<Categorys> mLists = new ArrayList<>();
+    private int mCategoryId;//此id为一级分类id
+    private void bind(){
+        JSONObject jb = new JSONObject();
+        try{
+            jb.put("s_uid",AppContext.SHOP_ID);
+        }catch (JSONException e){
+
+        }
+        //CATEGORY_ALL
+        mBaseHttpClient.postData(CNEW, jb, new AppAjaxCallback.onRecevieDataListener<Categorys>() {
+            @Override
+            public void onReceiverData(List<Categorys> data, String msg) {
+                mLists.clear();
+                mLists.addAll(data);
+                if (mLists.size() == 0) {
+                    return;
+                }
+                if (mAdapterType == null) {
+                    mAdapterType = new AddrAdapter<Categorys>(getActivity(), mLists, 2);
+                    mListView1.setAdapter(mAdapterType);
+                } else {
+                    mAdapterType.notifyDataSetChanged();
+                }
+
+                mCategoryId = mLists.get(mTypeId).getId();
+
+//                mTypeId = 0;
+                mAdapterType.setSelectedItem(mTypeId);
+
+                mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        mAdapterType.setSelectedItem(position);
+                        mAdapterType.notifyDataSetChanged();
+
+                        mCategoryId = mLists.get(position).getId();
+                        mTypeId = position;
+                        initCategory(mTypeId);
+
+                    }
+                });
+                initCategory(mTypeId);
+            }
+
+            @Override
+            public void onReceiverError(String msg) {
+
+            }
+
+            @Override
+            public Class<Categorys> dataTypeClass() {
+                return Categorys.class;
             }
         });
 
-        initShoppingCar();
+    }
 
-        initView();
+    private int mCateId;
+    private List<Categorys.cate> mCategory = new ArrayList<>();
+    private void initCategory(final int position){
+        mCategory.clear();
+        mCategory.addAll(mLists.get(position).getTypes());
+
+        int typeLength = mCategory.size();
+        final RadioButton[] rbs = new RadioButton[typeLength];
+        mRG.removeAllViews();
+        for(int i=0; i<typeLength; i++){
+            Categorys.cate c = mCategory.get(i);
+            View v = getActivity().getLayoutInflater().inflate(R.layout.view_rb_category, null);
+
+            RadioButton tempButton =(RadioButton)v.findViewById(R.id.rb1);
+            tempButton.setText(c.getName());
+
+            int id = position*10+i;
+            tempButton.setId(id);
+//            tempButton.setId(i);
+            rbs[i] = tempButton;
+
+
+            mRG.addView(tempButton, DpUtil.dip2px(getActivity(), 80),  LinearLayout.LayoutParams.MATCH_PARENT);
+        }
+        mRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                checkedId = checkedId - position*10;
+                mCateId = checkedId;
+                initBrand(checkedId);
+            }
+        });
+
+//        if(rbs.length>1){
+//            rbs[1].setChecked(true);
+//            rbs[0].setChecked(true);
+//        }else{
+//            rbs[0].setBackgroundResource(R.drawable.rb_category_bg);
+//            rbs[0].setChecked(true);
+//        }
+        rbs[0].setChecked(true);
+
+        mHView.scrollTo(0, 0);
+    }
+
+
+    private int mBrandId;
+    private List<Categorys.cate.brand> mBrand = new ArrayList<>();
+    private void initBrand(final int position){
+        mBrand.clear();
+        mBrand.addAll(mLists.get(mTypeId).getTypes().get(position).getBrands());
+
+        int typeLength = mBrand.size();
+        final RadioButton[] rbs = new RadioButton[typeLength];
+        mRG2.removeAllViews();
+
+        for(int i=0; i<typeLength; i++){
+            Categorys.cate.brand b = mBrand.get(i);
+            View v = getActivity().getLayoutInflater().inflate(R.layout.view_rb_category, null);
+
+            RadioButton tempButton =(RadioButton)v.findViewById(R.id.rb1);
+            if(i == 0){
+                tempButton.setText("全部");
+            }else{
+
+                tempButton.setText(b.getName());
+            }
+
+            int id = mTypeId*100+position*10+b.getId();
+            tempButton.setId(id);
+//            tempButton.setId(b.getId());
+            rbs[i] = tempButton;
+
+
+            mRG2.addView(tempButton, DpUtil.dip2px(getActivity(), 80),  LinearLayout.LayoutParams.MATCH_PARENT);
+        }
+
+        mRG2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                mPageNo = mPageDefault;
+                checkedId = checkedId - position*10 - mTypeId*100;
+                mBrandId = checkedId;
+//                mBrandId = checkedId;
+                mViewLoading.setVisibility(View.VISIBLE);
+                initProduct(mBrandId);
+            }
+        });
+
+        rbs[0].setChecked(true);
+//        if(rbs.length>1){
+//            rbs[1].setChecked(true);
+//            rbs[0].setChecked(true);
+//        }else{
+//            mViewLoading.setVisibility(View.VISIBLE);
+//            mPageNo = mPageDefault;
+//            initProduct(rbs[0].getId());
+//        }
+
+        mHView2.scrollTo(0, 0);
+    }
+
+
+    private int mPageNo = 1;
+    private int mPageDefault = 1;
+    private List<Product> mList = new ArrayList<>();
+    private ProductForCategoryAdapter mAdapter;
+    private void initProduct(int brandId){
+        JSONObject jb = new JSONObject();
+        try {
+            if(mCateId == 0){
+                jb.put("catId",mCategoryId);
+                jb.put("typeId",0);
+                jb.put("brandId", 1);
+            }else{
+                if(brandId == 1){
+                    jb.put("typeId",mLists.get(mTypeId).getTypes().get(mCateId).getId());
+                    jb.put("brandId", brandId);
+                }else{
+                    jb.put("typeId", 0);
+                    jb.put("brandId", brandId);
+                }
+
+            }
+
+            jb.put("pg", mPageNo);
+            jb.put("lat", AppContext.Latitude);
+            jb.put("lng", AppContext.Longitude);
+            jb.put("shopId", AppContext.SHOP_ID);
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mBaseHttpClient.postData(PRODUCT_LIST, jb, new AppAjaxCallback.onRecevieDataListener<Product>() {
+
+            @Override
+            public void onReceiverData(List<Product> data, String msg) {
+                if (mPageNo == mPageDefault) {
+                    mList.clear();
+                }
+
+                mList.addAll(data);
+                if (mAdapter == null) {
+                    mAdapter = new ProductForCategoryAdapter(getActivity(), mList, mTvCar);
+                    mListProduct.setAdapter(mAdapter);
+
+                } else {
+                    mAdapter.notifyDataSetChanged();
+                }
+
+                mViewLoading.setVisibility(View.GONE);
+                mTvEmpty.setVisibility(View.GONE);
+
+                mListProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        startActivity(new Intent(getActivity(), ProductDetailsActivity.class).putExtra(INTENT_ID,
+                                mList.get(position).getProductId()));
+//                        startActivity(new Intent(getActivity(), ProductListActivity.class).putExtra(
+//                                Constants.INTENT_ID, Integer.valueOf(mBrands.get(position).getP_brand_id())));
+                    }
+                });
+
+                mListProduct.onRefreshComplete();
+
+
+//                mListProduct.addView(LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_shop,null),
+//                        mList.size());
+
+            }
+
+            @Override
+            public void onReceiverError(String msg) {
+                mViewLoading.setVisibility(View.GONE);
+                mTvEmpty.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public Class<Product> dataTypeClass() {
+                return Product.class;
+            }
+        });
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initShoppingCar();
     }
 
     @Override
@@ -124,214 +403,14 @@ public class CategoryNew2Activity extends BaseActivity{
             case R.id.view_car://添加到购物车
                 startActivity(new Intent(getActivity(), ShoppingCarActivity.class));
                 break;
+            case R.id.tv:
+                bind();
+                break;
 
         }
     }
 
 
-
-    private AppHttpClient mHttpClientType;
-    private AppHttpClient mHttpClientBrand;
-    private List<Types> mTypes = new ArrayList<Types>();
-
-    private AddrAdapter<Types> mAdapterType;
-
-    //实例化界面
-    private void initView(){
-        if(mHttpClientType == null){
-            mHttpClientType = new AppHttpClient(PRODUCT_TYPE);
-            mHttpClientBrand = new AppHttpClient(PRODUCT_BRAND);
-        }
-        JSONObject jb = new JSONObject();
-        try{
-            jb.put("s_uid", AppContext.SHOP_ID);
-        }catch (JSONException e){
-
-        }
-
-        mHttpClientType.postData(PRODUCT_TYPE, new AppAjaxParam(jb), new AppAjaxCallback.onRecevieDataListener<Types>() {
-            @Override
-            public void onReceiverData(final List<Types> data, String msg) {
-                mTypes.clear();
-                mTypes.addAll(data);
-
-                if (mAdapterType == null) {
-                    mAdapterType = new AddrAdapter<Types>(getActivity(), mTypes, 2);
-                    mListView1.setAdapter(mAdapterType);
-                }
-
-
-                if (mTypes.size() == 0) {
-                    return;
-                }
-
-                if(mTypeId == 0) {
-                    mTypeId = Integer.valueOf(mTypes.get(0).getP_type_id());
-                    mAdapterType.setSelectedItem(0);
-                }else{
-                    for (int i=0;i<mTypes.size();i++){
-                        if(mTypeId == Integer.valueOf(mTypes.get(i).getP_type_id())){
-                            mAdapterType.setSelectedItem(i);
-                            break;
-                        }
-                    }
-                }
-
-                initBrand(mTypeId+"");
-
-                mListView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        mAdapterType.setSelectedItem(position);
-                        mAdapterType.notifyDataSetChanged();
-
-                        initBrand(data.get(position).getP_type_id());
-
-                    }
-                });
-
-            }
-
-            @Override
-            public void onReceiverError(String msg) {
-                showToast(msg);
-            }
-
-            @Override
-            public Class<Types> dataTypeClass() {
-                return Types.class;
-            }
-        });
-
-
-    }
-    private int mTypeId;
-
-    private List<Brands> mBrands = new ArrayList<Brands>();
-    private void initBrand(String brandId){
-
-        JSONObject jb2 = new JSONObject();
-        try{
-            jb2.put("s_uid", AppContext.SHOP_ID);
-            jb2.put("type_id",brandId);
-        }catch (JSONException e){
-
-        }
-        mHttpClientBrand.postData(PRODUCT_BRAND, new AppAjaxParam(jb2), new AppAjaxCallback.onRecevieDataListener<Brands>() {
-            @Override
-            public void onReceiverData(List<Brands> data, String msg) {
-                mBrands.clear();
-                mBrands.addAll(data);
-
-                int typeLength = mBrands.size();
-                final RadioButton[] rbs = new RadioButton[typeLength];
-                mRG.removeAllViews();
-
-                for(int i=0; i<typeLength; i++){
-                    View v = getActivity().getLayoutInflater().inflate(R.layout.view_tab_rb, null);
-
-                    RadioButton tempButton =(RadioButton)v.findViewById(R.id.rb1);
-                    tempButton.setText(mBrands.get(i).getP_brand_name());
-                    tempButton.setId(Integer.valueOf(mBrands.get(i).getP_brand_id()));
-                    rbs[i] = tempButton;
-
-
-                    mRG.addView(tempButton, DpUtil.dip2px(getActivity(), 80),  LinearLayout.LayoutParams.MATCH_PARENT);
-                }
-
-                mRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        mTypeId = checkedId;
-                        initProduct(checkedId);
-                    }
-                });
-                rbs[0].setChecked(true);
-            }
-
-            @Override
-            public void onReceiverError(String msg) {
-            }
-
-            @Override
-            public Class<Brands> dataTypeClass() {
-                return Brands.class;
-            }
-        } );
-
-    }
-
-    private int mPageNo = 1;
-    private int mPageDefault = 1;
-    private AppHttpClient mHttpClientProduct;
-    private List<Product> mList = new ArrayList<>();
-    private ProductAdapter mAdapter;
-    private void initProduct(int brandId){
-        int mTypeId = brandId;
-
-        JSONObject jb = new JSONObject();
-        try {
-            jb.put("typeId", 0);
-            jb.put("brandId", mTypeId);
-            jb.put("pg", mPageNo);
-            jb.put("lat", AppContext.Latitude);
-            jb.put("lng", AppContext.Longitude);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-
-        if(mHttpClientProduct == null){
-
-            mHttpClientProduct = new AppHttpClient(PRODUCT_LIST);
-        }
-        mHttpClientProduct.postData(PRODUCT_LIST, new AppAjaxParam(jb), new AppAjaxCallback.onRecevieDataListener<Product>() {
-
-            @Override
-            public void onReceiverData(List<Product> data, String msg) {
-                if (mPageNo == mPageDefault) {
-                    mList.clear();
-                }
-
-                mList.addAll(data);
-                if (mAdapter == null) {
-                    mAdapter = new ProductAdapter(getActivity(), mList,mTvCar);
-                    mListProduct.setAdapter(mAdapter);
-
-                } else {
-                    mAdapter.notifyDataSetChanged();
-                }
-
-                mViewLoading.setVisibility(View.GONE);
-                mTvEmpty.setVisibility(View.GONE);
-
-                mListProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        startActivity(new Intent(getActivity(),ProductDetailsActivity.class).putExtra(INTENT_ID,
-                                mList.get(position).getProductId()));
-//                        startActivity(new Intent(getActivity(), ProductListActivity.class).putExtra(
-//                                Constants.INTENT_ID, Integer.valueOf(mBrands.get(position).getP_brand_id())));
-                    }
-                });
-
-                mListProduct.onRefreshComplete();
-
-            }
-
-            @Override
-            public void onReceiverError(String msg) {
-                mViewLoading.setVisibility(View.GONE);
-                mTvEmpty.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public Class<Product> dataTypeClass() {
-                return Product.class;
-            }
-        });
-    }
 
     public static class AddrAdapter<T extends AddrBase>extends DevListBaseAdapter<T> {
 
@@ -355,7 +434,7 @@ public class CategoryNew2Activity extends BaseActivity{
         public View initView(int position, View convertView, ViewGroup parent) {
             if(convertView == null) {
                 if (mType == 2) {
-                    convertView = LayoutInflater.from(mContext).inflate(R.layout.item_category_tv1, null);
+                    convertView = LayoutInflater.from(mContext).inflate(R.layout.item_category_tv, null);
                 }else{
                     convertView = LayoutInflater.from(mContext).inflate(R.layout.item_category_tv2, null);
                 }

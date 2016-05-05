@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/receiving_way" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rg1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/view_margin_left"
+                android:paddingLeft="@dimen/view_margin_left"
+                android:paddingRight="@dimen/view_margin_left" >
+
+                <RadioButton
+                    android:id="@+id/rb11"
+                    style="@style/RBSelect"
+                    android:layout_marginRight="@dimen/view_padding4"
+                    android:text="@string/send_now" />
+
+                <RadioButton
+                    android:id="@+id/rb12"
+                    style="@style/RBSelect"
+                    android:layout_marginLeft="@dimen/view_padding4"
+                    android:text="@string/send_time" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/view_time"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/TvMyItem"
+                    android:text="@string/select_send_date" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/payment" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rg2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/view_margin_left"
+                android:paddingLeft="@dimen/view_margin_left"
+                android:paddingRight="@dimen/view_margin_left" >
+
+                <RadioButton
+                    android:id="@+id/rb21"
+                    style="@style/RBSelect"
+                    android:layout_marginRight="@dimen/view_padding4"
+                    android:text="@string/wechat_pay" />
+
+                <RadioButton
+                    android:id="@+id/rb22"
+                    style="@style/RBSelect"
+                    android:layout_marginLeft="@dimen/view_padding4"
+                    android:layout_marginRight="@dimen/view_padding4"
+                    android:text="@string/ali_pay" />
+
+                <RadioButton
+                    android:id="@+id/rb23"
+                    style="@style/RBSelect"
+                    android:layout_marginLeft="@dimen/view_padding4"
+                    android:text="@string/send_pay" />
+            </RadioGroup>
+            
+            
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:text="@string/use_e_case" />
+
+                <CheckBox 
+                    android:id="@+id/ck_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rb_e_case"
+                    android:button="@null"
+                    android:layout_marginRight="@dimen/view_margin_left"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_normal_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_normal_height"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TvMyHint"
+                    android:text="@string/order_total" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    style="@style/TvMyHint"
+                    android:text="@string/zero"
+                    android:textColor="@color/main_red" />
+            </LinearLayout>
+
+            <View style="@style/Line2" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_normal_height"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TvMyHint"
+                    android:text="@string/e_case" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    style="@style/TvMyHint"
+                    android:text="@string/zero"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+
+            <View style="@style/Line2" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_normal_height"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/TvMyHint"
+                    android:text="@string/discount" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    style="@style/TvMyHint"
+                    android:text="@string/zero"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sub"
+            style="@style/BtnRed"
+            android:layout_marginBottom="@dimen/view_padding4"
+            android:layout_marginLeft="@dimen/view_margin_left"
+            android:layout_marginRight="@dimen/view_margin_left"
+            android:layout_marginTop="@dimen/view_padding4"
+            android:text="@string/pay_now" />
+    </LinearLayout>
+
+</LinearLayout>

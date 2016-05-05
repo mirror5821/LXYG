@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_normal_press_white"
+    >
+
+    <ImageView
+        android:id="@+id/img_select"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/ic_right"
+        android:layout_marginLeft="@dimen/d8"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/d8"
+        android:paddingTop="@dimen/d8"
+        android:paddingBottom="@dimen/d8">
+
+        <LinearLayout
+            style="@style/LLMyItem"
+            android:layout_height="24dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:text="王沛栋"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@color/tv_title"/>
+
+            <TextView
+                android:id="@+id/phone"
+                android:text="王沛栋"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textSize="18sp"
+                android:textColor="@color/tv_title"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/receiving_address"
+            android:textSize="16sp"
+            android:textColor="@color/tv_hint"
+            android:layout_marginTop="@dimen/d8"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_update"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/ic_write"
+        android:layout_marginRight="@dimen/d8"/>
+
+</LinearLayout>

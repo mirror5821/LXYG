@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/main_bg"
+        android:orientation="vertical" >
+
+        <include layout="@layout/view_title_bar_home"/>
+
+        <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+            android:id="@+id/p_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/index_top_img_height" >
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/view_pager"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@mipmap/ic_default2" />
+
+                        <LinearLayout
+                            android:id="@+id/view_select"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="12dp"
+                            android:orientation="horizontal" />
+                    </RelativeLayout>
+
+                    <!-- android:background="@drawable/shape" -->
+
+                    <dev.mirror.library.view.NoScrollGridView
+                        android:id="@+id/gridview1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="4"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/d4"
+                        android:background="@color/main_bg"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+
+                        <LinearLayout
+                            android:id="@+id/view_more_commed"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@color/white">
+
+                            <View
+                                android:id="@+id/view_item"
+                                android:layout_width="4dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/main_red"/>
+
+                            <TextView
+                                android:id="@+id/index_name"
+                                style="@style/TvIndexClassTitle"
+                                android:textSize="14sp"
+                                android:paddingLeft="@dimen/view_margin_left"
+                                android:text="@string/shop_recommed"
+                                />
+
+                            <TextView
+                                android:id="@+id/product_my_more"
+                                style="@style/TvIndexClassTitle"
+                                android:drawableRight="@mipmap/ic_more"
+                                android:gravity="right|center_vertical"
+                                android:textSize="14sp"
+                                android:text="@string/more"/>
+                        </LinearLayout>
+
+
+                        <View style="@style/Line1"/>
+                        <dev.mirror.library.view.NoScrollGridView
+                            android:id="@+id/index_gridview"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:horizontalSpacing="@dimen/product_list_spacing"
+                            android:numColumns="3"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:verticalSpacing="@dimen/product_list_spacing"/>
+
+                        <!--android:background="@mipmap/bg_sharp_driver"-->
+                    </LinearLayout>
+
+                    <View style="@style/Line1"/>
+                    <LinearLayout
+                        android:id="@+id/view_dynamic"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </ScrollView>
+        </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_car"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/d8">
+
+        <ImageView
+            android:id="@+id/img_car"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_car_main"/>
+
+        <TextView
+            android:id="@+id/tv_car"
+            android:layout_width="@dimen/d16"
+            android:layout_height="@dimen/d16"
+            android:background="@mipmap/ic_s_w"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/d8"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:textColor="@color/main_red"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

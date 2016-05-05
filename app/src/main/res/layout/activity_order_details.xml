@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout style="@style/WH_WF_HW_V" >
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/order_num" />
+
+                <TextView
+                    android:id="@+id/num"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/status" />
+
+                <TextView
+                    android:id="@+id/status"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/shou_code" />
+
+                <TextView
+                    android:id="@+id/type"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/pay_ment" />
+
+                <TextView
+                    android:id="@+id/payment"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/order_total_price" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/order_send_type" />
+
+                <TextView
+                    android:id="@+id/sendType"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View style="@style/Line1" />
+
+                <LinearLayout style="@style/WH_WF_HW_H" >
+
+                    <TextView
+                        style="@style/TvOrderTitle"
+                        android:text="@string/order_send_time" />
+
+                    <TextView
+                        android:id="@+id/sendTime"
+                        style="@style/TvOrderContent" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                style="@style/WH_WF_HW_H"
+                android:background="@drawable/bg_normal_press_white" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/send_address" />
+
+                <TextView
+                    android:id="@+id/address"
+                    style="@style/TvOrderContent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:minHeight="@dimen/item_normal_height"
+                    android:paddingBottom="8dp"
+                    android:singleLine="false" />
+            </LinearLayout>
+
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                style="@style/WH_WF_HW_H"
+                android:background="@drawable/bg_normal_press_white" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/send_type" />
+
+                <TextView
+                    android:id="@+id/send_type2"
+                    style="@style/TvOrderContent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:minHeight="@dimen/item_normal_height"
+                    android:paddingBottom="8dp"
+                    android:singleLine="false" />
+            </LinearLayout>
+
+
+            <View style="@style/Line1" />
+
+            <LinearLayout style="@style/WH_WF_HW_H" >
+
+                <TextView
+                    style="@style/TvOrderTitle"
+                    android:text="@string/order_createtime" />
+
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/TvOrderContent" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view1"
+                style="@style/WH_WF_HW_V" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 底部按钮 -->
+
+    <LinearLayout
+        android:id="@+id/view_b1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/BtnBlue"
+            android:text="@string/delete_order"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/view_padding4"/>
+
+        <Button
+            android:id="@+id/btn_pay"
+            style="@style/BtnRed"
+            android:layout_weight="1"
+            android:text="@string/pay" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_b2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_cf"
+            style="@style/BtnRed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/cuifa" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/view_b3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btn_ok"
+            style="@style/BtnRed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/shouhuo" />
+    </LinearLayout>
+
+
+</LinearLayout>

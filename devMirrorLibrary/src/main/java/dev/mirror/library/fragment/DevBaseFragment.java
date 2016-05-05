@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import dev.mirror.library.R;
+import dev.mirror.library.activity.DevBaseActivity;
 
 public class DevBaseFragment extends Fragment implements OnClickListener{
 	private View rootView;
@@ -121,6 +122,8 @@ public class DevBaseFragment extends Fragment implements OnClickListener{
 		mProgressDialog.show();
 	}
 
+
+
 	/**
 	 * 取消加载dialog
 	 */
@@ -211,6 +214,22 @@ public class DevBaseFragment extends Fragment implements OnClickListener{
 		});
 		Dialog d = mBuilder.create();
 		d.show();
+	}
+
+
+	/**
+	 * 弹出自定义view
+	 */
+	public void showNormalDialogByCustomerView(View view,DevBaseActivity.DialogIface dialogIface){
+		if(mBuilder == null){
+			mBuilder = new AlertDialog.Builder(getActivity());
+		}
+		mBuilder.setView(view);
+		Dialog d = mBuilder.create();
+
+		dialogIface.d(d);
+		d.show();
+
 	}
 
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/view_padding8" 
+    android:background="@drawable/bg_normal_press_white">
+    
+
+    <ImageView 
+        android:id="@+id/img"
+        style="@style/ItemShoppingImg" />
+    
+    <LinearLayout android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/view_padding4">
+        
+        <TextView 
+            android:id="@+id/name"
+            style="@style/TvIndexClass"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/tv_l"/>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TvIndexClass"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d4"
+            android:textSize="14sp"
+            android:textColor="@color/tv_index_item"
+            android:singleLine="true"/>
+        
+        <TextView 
+            android:id="@+id/price"
+            style="@style/TvIndexClass"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_red"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"/>
+
+
+        
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

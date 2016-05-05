@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/order_make_product_height"
+        android:layout_height="@dimen/order_make_product_height"
+        android:background="@color/main_bg"
+        android:layout_marginLeft="2dp">
+
+        <dev.mirror.library.view.SquareImageView
+            android:id="@+id/img_s"
+            android:layout_width="@dimen/order_make_product_height"
+            android:layout_height="@dimen/order_make_product_height"
+            android:src="@mipmap/ic_item_default"
+            android:scaleType="fitXY"
+            android:layout_margin="1dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

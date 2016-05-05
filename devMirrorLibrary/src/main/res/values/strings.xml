@@ -13,7 +13,7 @@
 	<string name="order">订单</string>
 	
 	<string name="empty_product">暂无产品</string>
-	<string name="empty_area">此地区暂无商户入驻</string>
+	<string name="empty_area">店铺筹备中</string>
 	<string name="play_other">逛逛其他</string>
 	<string name="order_new">新订单(个)</string>
 	<string name="order_daishou">待收货(个)</string>

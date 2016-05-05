@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        android:background="@color/main_red" >
+
+
+        <RelativeLayout
+            android:id="@+id/view_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sharp_search"
+            android:layout_margin="@dimen/d8">
+
+
+
+            <ImageView
+                android:id="@+id/right_icon"
+                android:background="@drawable/btn_scan_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/d4"/>
+
+
+            <ImageView
+                android:background="@drawable/btn_search_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="@dimen/d4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/search_word"
+                android:gravity="center_vertical"
+                android:textColor="@color/search_tv"
+                android:layout_marginLeft="36dp"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+
+        <ListView
+            android:id="@+id/listview1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@color/main_bg"
+            android:dividerHeight="0dp"
+            android:divider="@color/main_bg"
+            android:scrollbars="none"/>
+
+
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:numColumns="3"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

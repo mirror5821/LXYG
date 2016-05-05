@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_order_list"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_num"
+                style="@style/TvOrderList"
+                android:text="@string/loading_data" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                style="@style/TvOrderList"
+                android:layout_alignParentRight="true"
+                android:text="@string/loading_data" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_num_price"
+                style="@style/TvOrderList"
+                android:text="@string/loading_data" />
+
+            <CheckBox
+                android:id="@+id/rb_product_detail"
+                style="@style/RBOpen"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <View style="@style/Line1" />
+
+        <LinearLayout
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_area"
+            style="@style/TvOrderList"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/loading_data" />
+
+        <TextView
+            android:id="@+id/tv_street"
+            style="@style/TvOrderList"
+            android:layout_height="24dp"
+            android:text="@string/loading_data" />
+
+        <TextView
+            android:id="@+id/tv_name_phone"
+            style="@style/TvOrderList"
+            android:layout_height="24dp"
+            android:text="@string/loading_data" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" >
+
+            <TextView
+                android:id="@+id/tv_send_name"
+                style="@style/TvOrderList"
+                android:layout_height="24dp"
+                android:text="@string/loading_data"
+                android:textColor="@color/main_red" />
+
+            <TextView
+                android:id="@+id/tv_send_time"
+                style="@style/TvOrderList"
+                android:layout_height="24dp"
+                android:layout_gravity="right" />
+        </FrameLayout>
+
+        <View style="@style/Line1" />
+
+        <!-- 付款 -->
+
+        <LinearLayout
+            android:id="@+id/view_b1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_delete"
+                style="@style/BtnBlue"
+                android:text="@string/delete_order"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/view_padding4"/>
+
+            <Button
+                android:id="@+id/btn_pay"
+                style="@style/BtnRed"
+                android:text="@string/pay"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/view_padding4"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_b2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_details"
+                style="@style/BtnBlue"
+                android:layout_width="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/detail" />
+
+            <Button
+                android:id="@+id/btn_cf"
+                style="@style/BtnRed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/cuifa" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_b3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_details2"
+                style="@style/BtnBlue"
+                android:layout_width="0dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/detail" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                style="@style/BtnRed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/shouhuo" />
+
+            <Button
+                android:id="@+id/btn_fh"
+                style="@style/BtnRed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/fahuo_notify"
+                android:layout_marginLeft="8dp"/>
+            
+            <Button
+                android:id="@+id/btn_re"
+                style="@style/BtnRed"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/r_shouhuo" 
+                android:layout_marginLeft="8dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/view_b5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_details3"
+                style="@style/BtnBlue"
+                android:layout_width="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:text="@string/detail" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

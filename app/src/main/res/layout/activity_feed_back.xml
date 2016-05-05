@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/main_bg">
+    
+    <include layout="@layout/view_title_bar"/>
+    
+    <EditText 
+        android:id="@+id/et"
+        style="@style/ETZizhi"
+        android:singleLine="false"
+        android:minLines="5"
+        android:gravity="top|left"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margin_left"
+        android:hint="@string/input_yijian"/>
+
+    
+    <Button 
+        android:id="@+id/sub"
+        style="@style/BtnRed"
+        android:text="@string/submit"
+        android:layout_margin="@dimen/view_margin_left"/>
+</LinearLayout>

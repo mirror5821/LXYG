@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/view_title_bar"/>
+
+    <!--<include layout="@layout/base_pull_refresh_recycleview"/>-->
+
+   <!-- <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshlayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/list"/>
+    </android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_loading"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="32dp"
+            android:id="@+id/bottom_progress_bar"
+            android:layout_height="32dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loading_data"
+            android:layout_below="@id/bottom_progress_bar"
+            android:layout_marginTop="2dp"
+            android:gravity="center_horizontal"
+            />
+    </RelativeLayout>
+
+   <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/ultimate_recycler_view"
+        />
+</LinearLayout>

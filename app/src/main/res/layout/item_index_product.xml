@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/main_bg">
+    
+    
+    
+     <LinearLayout
+        android:id="@+id/view_more"
+       	android:layout_width="fill_parent"
+       	android:layout_height="wrap_content"
+        android:orientation="horizontal"
+         android:background="@color/white"
+         android:layout_marginTop="@dimen/d4">
+        
+        <View 
+            android:id="@+id/view_item"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/main_red"/>
+
+        <TextView
+            android:id="@+id/p_name"
+            style="@style/TvIndexClassTitle"
+            android:textSize="14sp"
+            android:paddingLeft="@dimen/view_margin_left" />
+
+        <TextView
+            android:id="@+id/tv_more"
+            style="@style/TvIndexClassTitle"
+            android:drawableRight="@mipmap/ic_more"
+            android:gravity="right|center_vertical"
+            android:textSize="14sp"
+            android:text="@string/more"
+            />
+
+        <!-- android:background="@drawable/bg_normal_press_white"-->
+    </LinearLayout>
+    <View style="@style/Line1"/>
+    <dev.mirror.library.view.NoScrollGridView
+        android:id="@+id/p_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/product_list_spacing"
+        android:numColumns="3"
+        android:padding="1dp"
+        android:verticalSpacing="@dimen/product_list_spacing"
+        android:background="@color/white"/>
+    
+    <!-- android:background="@drawable/shape" -->
+
+    <!-- <LinearLayout
+        android:id="@+id/view_more"
+       	android:layout_width="fill_parent"
+       	android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/p_name"
+            style="@style/TvIndexClassTitle"
+            android:textSize="14sp"
+            android:paddingLeft="@dimen/view_margin_left" />
+
+        <TextView
+            style="@style/TvIndexClassTitle"
+            android:drawableRight="@drawable/ic_more"
+            android:gravity="right|center_vertical"
+            android:textSize="14sp"
+            android:text="@string/more"/>
+    </LinearLayout>
+
+    <dev.mirror.library.view.NoScrollGridView
+        android:id="@+id/p_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:horizontalSpacing="@dimen/view_driver_height"
+        android:numColumns="3"
+        android:padding="1dp"
+        android:verticalSpacing="@dimen/view_driver_height" /> -->
+
+</LinearLayout>

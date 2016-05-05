@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        android:background="@color/main_red" >
+
+        <ImageView
+            android:id="@+id/left_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/view_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_sharp_search"
+            android:layout_margin="@dimen/d8"
+            android:layout_toRightOf="@id/left_icon">
+
+
+
+            <ImageView
+                android:id="@+id/right_icon"
+                android:background="@drawable/btn_scan_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/d4"/>
+
+
+            <ImageView
+                android:background="@drawable/btn_search_orange"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="@dimen/d4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/search_word"
+                android:gravity="center_vertical"
+                android:textColor="@color/search_tv"
+                android:layout_marginLeft="36dp"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+
+            <ListView
+                android:id="@+id/listview1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:dividerHeight="0dp"
+                android:divider="@color/main_bg"
+                android:scrollbars="none"/>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:id="@+id/s_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:scrollbarAlwaysDrawHorizontalTrack="false"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/main_bg"
+                    android:fillViewport="false">
+                    <!--android:scrollbars="none"-->
+
+                    <RadioGroup
+                        android:id="@+id/view_select"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"/>
+
+                </HorizontalScrollView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                   android:background="@color/main_bg" >
+
+                    <include layout="@layout/view_loading" />
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/empty_product"/>
+
+                    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+                        android:id="@+id/list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:descendantFocusability="blocksDescendants"
+                        android:horizontalSpacing="@dimen/product_list_spacing"
+                        android:numColumns="3"
+                        android:verticalSpacing="@dimen/product_list_spacing"
+                        android:layout_marginLeft="@dimen/d4"
+                        android:layout_marginRight="@dimen/d4"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/view_car"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/d8">
+
+            <ImageView
+                android:id="@+id/img_car"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_car_main"/>
+
+            <TextView
+                android:id="@+id/tv_car"
+                android:layout_width="@dimen/d16"
+                android:layout_height="@dimen/d16"
+                android:background="@mipmap/ic_s_w"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/d8"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:textColor="@color/main_red"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

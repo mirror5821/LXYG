@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/view_padding8" 
+    android:background="@drawable/bg_normal_press_white">
+    
+
+    <ImageView 
+        android:id="@+id/img"
+        style="@style/ItemShoppingImg" />
+    
+    <LinearLayout android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/view_padding4">
+        
+        <TextView 
+            android:id="@+id/name"
+            style="@style/TvIndexClass"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/tv_l"/>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TvIndexClass"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d4"
+            android:textSize="14sp"
+            android:textColor="@color/tv_index_item"
+            android:singleLine="true"/>
+        
+        <TextView 
+            android:id="@+id/price"
+            style="@style/TvIndexClass"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_red"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_red_sharp"
+                android:text="@string/di"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/tv_title"
+                android:layout_marginLeft="@dimen/d4"/>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_car"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_car_c" />
+
+        <TextView
+            android:id="@+id/n"
+            style="@style/TvNumNotify"/>
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

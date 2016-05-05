@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <include layout="@layout/view_loading" />
+
+        <include layout="@layout/view_grid_empty" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshGridView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:horizontalSpacing="@dimen/product_list_spacing"
+            android:numColumns="3"
+            android:verticalSpacing="@dimen/product_list_spacing" />
+    </LinearLayout>
+
+    <View style="@style/Line1"/>
+    <LinearLayout
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/item_normal_height"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/view_margin_left"
+        android:paddingRight="@dimen/view_margin_left" >
+
+        <TextView
+            android:id="@+id/tv_price_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/loading_data"
+            android:textColor="@color/tv_index_item" />
+
+        <Button
+            android:id="@+id/btn_buy1"
+            style="@style/BtnBlue"
+            android:layout_width="92dp"
+            android:layout_height="32dp"
+            android:text="@string/order_make" />
+    </LinearLayout>
+
+</LinearLayout>

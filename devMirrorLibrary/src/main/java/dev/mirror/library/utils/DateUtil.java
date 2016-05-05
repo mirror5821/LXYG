@@ -34,10 +34,12 @@ public class DateUtil {
 	 * 
 	 */
 	public static String TimeStamp2Date(String timestampString, String formats){
-		Long timestamp = Long.parseLong(timestampString)*1000;
+		Long timestamp = Long.parseLong(timestampString);
+//		Long timestamp = Long.parseLong(timestampString)*1000;
 		String date = new java.text.SimpleDateFormat(formats).format(new java.util.Date(timestamp));
 		return date;
 	}
+
 
 
 	/**
@@ -179,7 +181,7 @@ public class DateUtil {
 	 */
 	public static String getStringToday() {
 		Date currentTime = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd HHmmss");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateString = formatter.format(currentTime);
 		return dateString;
 	}

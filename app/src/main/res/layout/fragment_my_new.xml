@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/view_login"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/my_header_bg"
+                android:background="@mipmap/ic_my_bg_new"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="8dp" >
+
+                <dev.mirror.library.view.CircleImageView
+                    android:id="@+id/c_img"
+                    android:layout_width="@dimen/my_header"
+                    android:layout_height="@dimen/my_header"
+                    android:src="@mipmap/ic_logo_s" />
+
+                <TextView
+                    android:id="@+id/shop_name"
+                    style="@style/TvIndexClass"
+                    android:layout_below="@id/c_img"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <LinearLayout style="@style/LLMy1" >
+
+                    <TextView
+                        style="@style/TvMyHint"
+                        android:text="@string/consumption" />
+
+                    <TextView style="@style/TvMyRed" />
+                </LinearLayout>
+
+                <View style="@style/Line2" />
+
+                <LinearLayout style="@style/LLMy1" >
+
+                    <TextView
+                        style="@style/TvMyHint"
+                        android:text="@string/save" />
+
+                    <TextView style="@style/TvMyGreen" />
+                </LinearLayout>
+
+                <View style="@style/Line2" />
+
+                <LinearLayout style="@style/LLMy1" >
+
+                    <TextView
+                        style="@style/TvMyHint"
+                        android:text="@string/commission" />
+
+                    <TextView style="@style/TvMyRed" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    style="@style/ReMyOrder">
+
+                    <TextView
+                        android:id="@+id/tv_order1"
+                        style="@style/TvMyOrder"
+                        android:drawableTop="@mipmap/ic_order_dai_fu68"
+                        android:text="@string/order_pay" />
+
+                    <TextView
+                        android:id="@+id/n1"
+                        style="@style/TvNumNotify" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/Line2"
+                    android:layout_marginBottom="@dimen/view_margin_top"
+                    android:layout_marginTop="@dimen/view_margin_top" />
+
+                <RelativeLayout
+                    style="@style/ReMyOrder">
+
+                    <TextView
+                        android:id="@+id/tv_order2"
+                        style="@style/TvMyOrder"
+                        android:drawableTop="@mipmap/ic_order_dai_fa68"
+                        android:text="@string/order_dai" />
+                    <TextView
+                        android:id="@+id/n2"
+                        style="@style/TvNumNotify" />
+                </RelativeLayout>
+
+
+
+                <View
+                    style="@style/Line2"
+                    android:layout_marginBottom="@dimen/view_margin_top"
+                    android:layout_marginTop="@dimen/view_margin_top" />
+
+                <RelativeLayout
+                    style="@style/ReMyOrder">
+
+                    <TextView
+                        android:id="@+id/tv_order3"
+                        style="@style/TvMyOrder"
+                        android:drawableTop="@mipmap/ic_order_dai_shou68"
+                        android:text="@string/order_dai_shou" />
+
+                    <TextView
+                        android:id="@+id/n3"
+                        style="@style/TvNumNotify" />
+                </RelativeLayout>
+
+
+                <View
+                    style="@style/Line2"
+                    android:layout_marginBottom="@dimen/view_margin_top"
+                    android:layout_marginTop="@dimen/view_margin_top" />
+
+                <RelativeLayout
+                    style="@style/ReMyOrder">
+                    <TextView
+                        android:id="@+id/tv_order4"
+                        style="@style/TvMyOrder"
+                        android:drawableTop="@mipmap/ic_push_msg"
+                        android:text="@string/push_message" />
+
+                    <TextView
+                        android:id="@+id/n4"
+                        style="@style/TvNumNotify" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view_order"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_all_order44"
+                    android:text="@string/all_order" />
+
+                <TextView
+                    android:id="@+id/tv_order_num"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:visibility="gone" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakeage_s"
+                    android:text="@string/my_pakeage" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view_cash"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakage_new44"
+                    android:text="@string/e_sore" />
+
+                <TextView
+                    android:id="@+id/tv_case_num"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+            <LinearLayout
+                android:id="@+id/view_miguan"
+                style="@style/LLMyItem">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakage_miguan"
+                    android:text="@string/miguan_sore" />
+
+                <TextView
+                    android:id="@+id/tv_miguan_num"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+            <LinearLayout
+                android:id="@+id/view_jf"
+                style="@style/LLMyItem">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakage_jf"
+                    android:text="@string/jifen_sore" />
+
+                <TextView
+                    android:id="@+id/tv_jf_num"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <!--<View style="@style/Line1" />-->
+
+            <LinearLayout
+                android:id="@+id/view_msg"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakage_new44"
+                    android:text="@string/push_message" />
+
+                <TextView
+                    android:id="@+id/tv_msg"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <View style="@style/Line1" android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/view_forum"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/d8">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_pakage_new44"
+                    android:text="@string/forum_menage" />
+
+                <TextView
+                    android:id="@+id/tv_forum"
+                    style="@style/TvMyItemNum"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view_address"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_address_manager44"
+                    android:text="@string/manage_address" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View
+                style="@style/Line1"
+                android:visibility="gone" />
+
+            <LinearLayout
+                style="@style/LLMyItem"
+                android:visibility="gone" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_message_s"
+                    android:text="@string/message" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+            <View style="@style/Line1"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/view_kf"
+                style="@style/LLMyItem"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_kf_new44"
+                    android:text="@string/kf_phone" />
+
+                <TextView style="@style/TvMyItemNum" 
+                    android:text="@string/kf_phone_num"
+                    android:textColor="@color/main_red"/>
+            </LinearLayout>
+
+            <View style="@style/Line1" />
+
+            <LinearLayout
+                android:id="@+id/view_set"
+                style="@style/LLMyItem" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_set_new44"
+                    android:text="@string/set_more" />
+
+                <TextView style="@style/TvMyItemNum" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/view_contact"
+                style="@style/LLMyItem"
+                android:layout_marginTop="@dimen/d8">
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_set_new44"
+                    android:text="@string/join_phone" />
+
+                <TextView style="@style/TvMyItemNum"
+                    android:text="@string/kf_phone_num"/>
+            </LinearLayout>
+
+            <View style="@style/Line1"/>
+            <LinearLayout
+                android:id="@+id/view_gh"
+                style="@style/LLMyItem"
+                android:layout_marginBottom="24dp" >
+
+                <TextView
+                    style="@style/TvMyItem"
+                    android:drawableLeft="@mipmap/ic_set_new44"
+                    android:text="@string/gonghuo" />
+
+                <TextView style="@style/TvMyItemNum"
+                    android:text="@string/gonghuo_phone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

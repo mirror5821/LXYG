@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title_bar" />
+
+    <EditText
+        android:id="@+id/phone"
+        style="@style/ETZizhi"
+        android:hint="@string/input_phone"
+        android:inputType="phone" 
+        android:maxLines="11"/>
+
+    <View style="@style/Line3" />
+
+    <LinearLayout style="@style/LLMyItem" > 
+
+        <EditText
+            android:id="@+id/code"
+            style="@style/ETZizhi"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="@string/input_code"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_code"
+            style="@style/BtnRed"
+            android:layout_width="68dp"
+            android:layout_height="match_parent"
+            android:text="@string/get_code"
+            android:textSize="@dimen/tv_s_x" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sub"
+        style="@style/BtnRed"
+        android:layout_margin="8dp"
+        android:text="@string/login" />
+
+</LinearLayout>

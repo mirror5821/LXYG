@@ -2704,7 +2704,8 @@ containing a value of this type.
         public static int view_loading=0x7f040038;
     }
     public static final class mipmap {
-        public static int shadow_left=0x7f030000;
+        public static int ic_text_indicator=0x7f030000;
+        public static int shadow_left=0x7f030001;
     }
     public static final class string {
         public static int abc_action_bar_home_description=0x7f070000;
@@ -2724,8 +2725,11 @@ containing a value of this type.
         public static int abc_shareactionprovider_share_with=0x7f07000b;
         public static int abc_shareactionprovider_share_with_application=0x7f07000c;
         public static int abc_toolbar_collapse_description=0x7f07001f;
-        public static int app_name=0x7f070020;
-        public static int caiwu=0x7f070021;
+        public static int address_delete=0x7f070020;
+        public static int address_update=0x7f070021;
+        public static int app_name=0x7f070022;
+        public static int caiwu=0x7f070023;
+        public static int close=0x7f070024;
         public static int cube_ptr_hours_ago=0x7f070013;
         public static int cube_ptr_last_update=0x7f070014;
         public static int cube_ptr_minutes_ago=0x7f070015;
@@ -2735,33 +2739,36 @@ containing a value of this type.
         public static int cube_ptr_refreshing=0x7f070019;
         public static int cube_ptr_release_to_refresh=0x7f07001a;
         public static int cube_ptr_seconds_ago=0x7f07001b;
-        public static int customer=0x7f070022;
-        public static int customer_all=0x7f070023;
-        public static int customer_lv=0x7f070024;
-        public static int customer_y=0x7f070025;
-        public static int empty_area=0x7f070026;
-        public static int empty_product=0x7f070027;
-        public static int empty_shopping_car=0x7f070028;
-        public static int loading_data=0x7f070029;
-        public static int loading_failed=0x7f07002a;
-        public static int order=0x7f07002b;
-        public static int order_daishou=0x7f07002c;
-        public static int order_new=0x7f07002d;
-        public static int play_other=0x7f07002e;
+        public static int customer=0x7f070025;
+        public static int customer_all=0x7f070026;
+        public static int customer_lv=0x7f070027;
+        public static int customer_y=0x7f070028;
+        public static int empty_area=0x7f070029;
+        public static int empty_product=0x7f07002a;
+        public static int empty_shopping_car=0x7f07002b;
+        public static int loading_data=0x7f07002c;
+        public static int loading_failed=0x7f07002d;
+        public static int open=0x7f07002e;
+        public static int order=0x7f07002f;
+        public static int order_daishou=0x7f070030;
+        public static int order_new=0x7f070031;
+        public static int play_other=0x7f070032;
         public static int pull_to_refresh_from_bottom_pull_label=0x7f070010;
         public static int pull_to_refresh_from_bottom_refreshing_label=0x7f070011;
         public static int pull_to_refresh_from_bottom_release_label=0x7f070012;
         public static int pull_to_refresh_pull_label=0x7f07000d;
         public static int pull_to_refresh_refreshing_label=0x7f07000e;
         public static int pull_to_refresh_release_label=0x7f07000f;
-        public static int qiangdan=0x7f07002f;
-        public static int qiangdan_now=0x7f070030;
-        public static int saleAll=0x7f070031;
-        public static int saleY=0x7f070032;
-        public static int saleYu=0x7f070033;
-        public static int sign=0x7f070034;
-        public static int sign2=0x7f070035;
-        public static int status_bar_notification_info_overflow=0x7f070036;
+        public static int push_set=0x7f070033;
+        public static int qiangdan=0x7f070034;
+        public static int qiangdan_now=0x7f070035;
+        public static int saleAll=0x7f070036;
+        public static int saleY=0x7f070037;
+        public static int saleYu=0x7f070038;
+        public static int search_no_product=0x7f070039;
+        public static int sign=0x7f07003a;
+        public static int sign2=0x7f07003b;
+        public static int status_bar_notification_info_overflow=0x7f07003c;
     }
     public static final class style {
         public static int AlertDialog_AppCompat=0x7f090074;
@@ -3834,6 +3841,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CardView_android_minHeight android:minHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #CardView_android_minWidth android:minWidth}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardBackgroundColor dev.mirror.library:cardBackgroundColor}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardCornerRadius dev.mirror.library:cardCornerRadius}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardElevation dev.mirror.library:cardElevation}</code></td><td></td></tr>
@@ -3846,6 +3855,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #CardView_contentPaddingRight dev.mirror.library:contentPaddingRight}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_contentPaddingTop dev.mirror.library:contentPaddingTop}</code></td><td></td></tr>
            </table>
+           @see #CardView_android_minHeight
+           @see #CardView_android_minWidth
            @see #CardView_cardBackgroundColor
            @see #CardView_cardCornerRadius
            @see #CardView_cardElevation
@@ -3859,10 +3870,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #CardView_contentPaddingTop
          */
         public static final int[] CardView = {
-            0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029,
-            0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d,
-            0x7f01002e, 0x7f01002f, 0x7f010030
+            0x0101013f, 0x01010140, 0x7f010026, 0x7f010027,
+            0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b,
+            0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f,
+            0x7f010030
         };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#minHeight}
+          attribute's value can be found in the {@link #CardView} array.
+          @attr name android:minHeight
+        */
+        public static final int CardView_android_minHeight = 1;
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#minWidth}
+          attribute's value can be found in the {@link #CardView} array.
+          @attr name android:minWidth
+        */
+        public static final int CardView_android_minWidth = 0;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardBackgroundColor}
           attribute's value can be found in the {@link #CardView} array.
@@ -3877,7 +3901,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardBackgroundColor
         */
-        public static final int CardView_cardBackgroundColor = 0;
+        public static final int CardView_cardBackgroundColor = 2;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardCornerRadius}
           attribute's value can be found in the {@link #CardView} array.
@@ -3893,7 +3917,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardCornerRadius
         */
-        public static final int CardView_cardCornerRadius = 1;
+        public static final int CardView_cardCornerRadius = 3;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardElevation}
           attribute's value can be found in the {@link #CardView} array.
@@ -3909,7 +3933,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardElevation
         */
-        public static final int CardView_cardElevation = 2;
+        public static final int CardView_cardElevation = 4;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardMaxElevation}
           attribute's value can be found in the {@link #CardView} array.
@@ -3925,7 +3949,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardMaxElevation
         */
-        public static final int CardView_cardMaxElevation = 3;
+        public static final int CardView_cardMaxElevation = 5;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardPreventCornerOverlap}
           attribute's value can be found in the {@link #CardView} array.
@@ -3939,7 +3963,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardPreventCornerOverlap
         */
-        public static final int CardView_cardPreventCornerOverlap = 5;
+        public static final int CardView_cardPreventCornerOverlap = 7;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#cardUseCompatPadding}
           attribute's value can be found in the {@link #CardView} array.
@@ -3953,7 +3977,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:cardUseCompatPadding
         */
-        public static final int CardView_cardUseCompatPadding = 4;
+        public static final int CardView_cardUseCompatPadding = 6;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#contentPadding}
           attribute's value can be found in the {@link #CardView} array.
@@ -3969,7 +3993,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:contentPadding
         */
-        public static final int CardView_contentPadding = 6;
+        public static final int CardView_contentPadding = 8;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#contentPaddingBottom}
           attribute's value can be found in the {@link #CardView} array.
@@ -3985,7 +4009,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:contentPaddingBottom
         */
-        public static final int CardView_contentPaddingBottom = 10;
+        public static final int CardView_contentPaddingBottom = 12;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#contentPaddingLeft}
           attribute's value can be found in the {@link #CardView} array.
@@ -4001,7 +4025,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:contentPaddingLeft
         */
-        public static final int CardView_contentPaddingLeft = 7;
+        public static final int CardView_contentPaddingLeft = 9;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#contentPaddingRight}
           attribute's value can be found in the {@link #CardView} array.
@@ -4017,7 +4041,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:contentPaddingRight
         */
-        public static final int CardView_contentPaddingRight = 8;
+        public static final int CardView_contentPaddingRight = 10;
         /**
           <p>This symbol is the offset where the {@link dev.mirror.library.R.attr#contentPaddingTop}
           attribute's value can be found in the {@link #CardView} array.
@@ -4033,7 +4057,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name dev.mirror.library:contentPaddingTop
         */
-        public static final int CardView_contentPaddingTop = 9;
+        public static final int CardView_contentPaddingTop = 11;
         /** Attributes that can be used with a CircleImageView.
            <p>Includes the following attributes:</p>
            <table>

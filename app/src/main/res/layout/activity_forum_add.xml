@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg">
+
+    <include layout="@layout/view_title_bar"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/d8">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/tv_title"
+                    android:gravity="center_vertical"
+                    android:text="@string/title"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="@dimen/d4"/>
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="@string/input_title"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/Line1"/>
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minLines="4"
+                android:background="@null"
+                android:hint="@string/input_content"
+                android:gravity="top"
+                android:padding="@dimen/d4"/>
+
+            <View
+                style="@style/Line1"/>
+
+            <dev.mirror.library.view.NoScrollGridView
+                android:id="@+id/gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="@dimen/product_list_spacing"
+                android:numColumns="4"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:verticalSpacing="@dimen/product_list_spacing"
+                android:layout_margin="@dimen/view_margin_top"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

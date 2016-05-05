@@ -17,7 +17,7 @@ public class UIHelper {
 
 		mBuilder = new AlertDialog.Builder(context);
 		mBuilder.setTitle("拨打电话");
-		mBuilder.setMessage("确认拨打客服电话?\n"+phone);
+		mBuilder.setMessage("确认拨打电话?\n"+phone);
 		mBuilder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
 			@Override
@@ -38,4 +38,6 @@ public class UIHelper {
 		Dialog d = mBuilder.create();
 		d.show();
 	}
+
+
 }
